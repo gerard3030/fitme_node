@@ -3,7 +3,7 @@ const router = express.Router()
 
 
 router.get("/noToken", (req,res)=>{
-    res.json("noToken1")
+    res.json({answer:"noToken1"})
 })
 
 router.get("/", (req,res)=>{
