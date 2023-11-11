@@ -7,6 +7,10 @@
 var app = require('../app');
 var debug = require('debug')('fitme:server');
 var http = require('http');
+const connectToDB = require("../model/connectToDB")
+
+connectToDB.then(()=>{debug("connected to DB")})
+.catch((error)=>{debug("can't connect to DB: ", error),process.exit(1)})
 
 /**
  * Get port from environment and store in Express.
